@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: guestbook-ui
 spec:
-  replicas: <+pipeline.variables.replicacount>
+  replicas: "<+pipeline.variables.replicacount>"
   revisionHistoryLimit: 3
   selector:
     matchLabels:
