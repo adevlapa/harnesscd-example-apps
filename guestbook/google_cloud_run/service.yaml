@@ -1,23 +1,11 @@
 apiVersion: serving.knative.dev/v1
 kind: Service
 metadata:
-  name: my-awesome-app
-  namespace: default
-  labels:
-    cloud.google.com/location: us-central1
+  name: harness-hello-world
 spec:
   template:
     spec:
       containers:
-      - image: https://console.cloud.google.com/artifacts/docker/cloudrun/us/container/hello
+      - image: us-docker.pkg.dev/cloudrun/container/hello
         ports:
         - containerPort: 8080
-        resources:
-          limits:
-            cpu: "1000m"     # 1 vCPU
-            memory: "512Mi"  # 512 MB RAM
-        env:
-        - name: DATABASE_URL
-          value: "your-db-connection-string"
-        - name: NODE_ENV
-          value: "production"
