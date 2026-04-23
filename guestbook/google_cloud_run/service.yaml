@@ -9,7 +9,7 @@ spec:
   template:
     spec:
       containers:
-      - image: gcr.io/my-project/my-app-image:latest
+      - image: https://console.cloud.google.com/artifacts/docker/cloudrun/us/container/hello
         ports:
         - containerPort: 8080
         resources:
